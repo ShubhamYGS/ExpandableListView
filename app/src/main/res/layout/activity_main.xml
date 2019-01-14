@@ -16,7 +16,9 @@
         android:groupIndicator="@null"
         android:divider="#000000"
         android:dividerHeight="1dp"
-        android:listSelector="#8f8f8b"
+        android:listSelector="@drawable/selector_list_item"
+        android:textFilterEnabled="true"
+        android:choiceMode="singleChoice"
         />
 
 
