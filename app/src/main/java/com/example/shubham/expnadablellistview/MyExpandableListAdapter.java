@@ -1,9 +1,13 @@
 package com.example.shubham.expnadablellistview;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -12,6 +16,7 @@ import java.util.List;
 public class MyExpandableListAdapter extends BaseExpandableListAdapter {
     private HashMap<String, List<String>> mStringListHashMap;
     private String[] mListHeaderGroup;
+
 
 
     public MyExpandableListAdapter(HashMap<String, List<String>> stringListHashMap) {
@@ -64,7 +69,7 @@ public class MyExpandableListAdapter extends BaseExpandableListAdapter {
         textView.setText(String.valueOf(getGroup(groupPosition)));
 
         TextView counter = convertView.findViewById(R.id.tv_counter);
-        counter.setText(String.valueOf(groupPosition));
+        counter.setText(String.valueOf(groupPosition+1));
 
         return convertView;
     }

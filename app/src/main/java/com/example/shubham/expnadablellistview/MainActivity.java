@@ -12,6 +12,7 @@ import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
         ExpandableListView expandableListView = findViewById(R.id.expandableListView);
 
-        HashMap<String, List<String>> item = new HashMap<>();
+        LinkedHashMap<String, List<String>> item = new LinkedHashMap<>();
+
+        ArrayList<String> id1 = new ArrayList<>();
+        id1.add("Platform independent practically means “write once run anywhere”. Java is called so because of its byte codes which can run on any system irrespective of its underlying operating system.");
+
+        item.put("Why Java is platform independent?", id1);
+
 
         ArrayList<String> linuxGroups = new ArrayList<>();
         linuxGroups.add("Ubuntu");
@@ -33,67 +40,40 @@ public class MainActivity extends AppCompatActivity {
 
         item.put("Linux", linuxGroups);
 
-        ArrayList<String> windowsGroups = new ArrayList<>();
-        windowsGroups.add("Windows");
-        windowsGroups.add("Windows NT");
-        windowsGroups.add("Windows RT");
-        windowsGroups.add("Windows Mobile");
-
-        item.put("Windows", windowsGroups);
-
-        ArrayList<String> id1 = new ArrayList<>();
-        id1.add("Platform independent practically means “write once run anywhere”. Java is called so because of its byte codes which can run on any system irrespective of its underlying operating system.");
-
-        item.put("Why Java is platform independent?", id1);
-
         ArrayList<String> id2 = new ArrayList<>();
-        id2.add("Hi");
-        item.put("Hello",id2);
+        id2.add("Java is not 100% Object-oriented because it makes use of eight primitive datatypes such as boolean, byte, char, int, float, double, long, short which are not objects.");
+
+        item.put("Why java is not 100% Object-oriented?", id2);
 
         ArrayList<String> id3 = new ArrayList<>();
-        id3.add("Hi1");
-        item.put("Hello1",id3);
+        id3.add("public : Public is an access modifier, which is used to specify who can access this method. Public means that this Method will be accessible by any Class.\n" +
+                "static : It is a keyword in java which identifies it is class based i.e it can be accessed without creating the instance of a Class.\n" +
+                "void : It is the return type of the method. Void defines the method which will not return any value.\n" +
+                "main: It is the name of the method which is searched by JVM as a starting point for an application with a particular signature only. It is the method where the main execution occurs.\n" +
+                "String args[] : It is the parameter passed to the main method.");
+        item.put(" Explain public static void main(String args[]).",id3);
 
         ArrayList<String> id4 = new ArrayList<>();
-        id4.add("Hi2");
-        item.put("Hello2",id4);
+        id4.add("In Java, constructor refers to a block of code which is used to initialize an object. It must have the same name as that of the class. Also, it has no return type and it is automatically called when an object is created.\n" +
+                "\n" +
+                "There are two types of constructors:\n" +
+                "\n" +
+                "Default constructor\n" +
+                "Parameterized constructor");
+        item.put("What are constructors in Java?",id4);
 
         ArrayList<String> id5 = new ArrayList<>();
-        id5.add("Hi3");
-        item.put("Hello3",id5);
+        id5.add("Singleton class is a class whose only one instance can be created at any given time, in one JVM. A class can be made singleton by making its constructor private.");
+        item.put("What is singleton class and how can we make a class singleton?",id5);
 
         ArrayList<String> id6 = new ArrayList<>();
-        id6.add("Hi4");
-        item.put("Hello4",id6);
+        id6.add("Equals() method is defined in Object class in Java and used for checking equality of two objects defined by business logic.\n" +
+                "“==” or equality operator in Java is a binary operator provided by Java programming language and used to compare primitives and objects. public boolean equals(Object o) is the method provided by the Object class. The default implementation uses == operator to compare two objects. For example: method can be overridden like String class. equals() method is used to compare the values of two objects.");
+        item.put("What is the difference between equals() and == ",id6);
 
         ArrayList<String> id7 = new ArrayList<>();
-        id7.add("Hi5");
-        item.put("Hello5",id7);
-
-        ArrayList<String> id8 = new ArrayList<>();
-        id8.add("Hi6");
-        item.put("Hello6",id8);
-
-        ArrayList<String> id9 = new ArrayList<>();
-        id9.add("Hi7");
-        item.put("Hello7",id9);
-
-        ArrayList<String> id25 = new ArrayList<>();
-        id25.add("Hi8");
-        item.put("Hello8",id25);
-
-        ArrayList<String> id26 = new ArrayList<>();
-        id26.add("Hi9");
-        item.put("Hello9",id26);
-
-        ArrayList<String> id28 = new ArrayList<>();
-        id28.add("Hi10");
-        item.put("Hello10",id28);
-
-        ArrayList<String> id0 = new ArrayList<>();
-        id0.add("Hi11");
-        item.put("Hello11",id0);
-
+        id7.add("Hi");
+        item.put("Hello",id7);
 
 
         MyExpandableListAdapter adapter = new MyExpandableListAdapter(item);
